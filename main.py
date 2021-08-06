@@ -26,10 +26,28 @@ bot.set_window_size(414, 936)
 url_file = open('urls.txt', "r")
 urls = url_file.readlines()
 
+
+def doesnt_exist(bot, xpath):
+    try:
+        bot.find_element_by_xpath(xpath)
+    except NoSuchElementException:
+        return True
+    else:
+        return False
+
+
 for url in urls:
     print('--Liking comments for this post: ' + url)
 
     bot.get(url)
+
+    if not doesnt_exist(bot, '//*[@id="main"]/div/div[1]/div[2]/div[2]/div[2]/div[2]/button'):
+        time.sleep(1)
+        bot.find_element_by_xpath(
+            '//*[@id="main"]/div/div[1]/div[2]/div[2]/span').click()
+        print('Closed pop ups')
+    else:
+        print('No pop up window.')
 
     # pause
     time.sleep(4)
