@@ -15,7 +15,7 @@ A tiktok bot that likes comments in any tiktok video.
 
    Enjoy!
 
-   Follow my youtube video if you struggle during setup.
+   Follow my youtube video: https://youtu.be/af0MVXhSLdg if you struggle during setup.
 
 ## Donations
 
