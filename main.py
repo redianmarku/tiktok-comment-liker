@@ -41,10 +41,10 @@ for url in urls:
 
     bot.get(url)
 
-    if not doesnt_exist(bot, '//*[@id="main"]/div/div[1]/div[2]/div[2]/div[2]/div[2]/button'):
+    if not doesnt_exist(bot, '/html/body/div[5]/div/div/div[3]/button[2]'):
         time.sleep(1)
         bot.find_element_by_xpath(
-            '//*[@id="main"]/div/div[1]/div[2]/div[2]/span').click()
+            '/html/body/div[5]/div/div/div[3]/button[2]').click()
         print('Closed pop ups')
     else:
         print('No pop up window.')
@@ -59,6 +59,8 @@ for url in urls:
     bot.find_element_by_xpath(
         '//*[@id="main"]/div/div[1]/div[1]/div/div[3]/div/div/div[2]/div/div[2]').click()
     time.sleep(2)
+
+    
 
     try:
         l_buttons = bot.find_elements_by_xpath(
